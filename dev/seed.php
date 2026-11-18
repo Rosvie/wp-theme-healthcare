@@ -1,13 +1,13 @@
 <?php
 /**
- * Demo content loader (run with: wp eval-file .../dev/seed.php).
+ * Demo content loader (run with: wp eval-file .../dev/seed.php, or include it from WordPress).
  * Creates the pages, menus and settings shown in the screenshots. Safe to re-run:
  * existing pages are updated in place.
  *
  * @package Northfield_Home_Health
  */
 
-if ( ! defined( 'WP_CLI' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
@@ -99,7 +99,9 @@ foreach ( $banners as $key => $paths ) {
 		copy( $source, $tmp );
 		$attachment_id = media_handle_sideload( array( 'name' => 'banner-' . $key . '.jpg', 'tmp_name' => $tmp ), 0 );
 		if ( is_wp_error( $attachment_id ) ) {
-			WP_CLI::warning( "Banner {$key}: " . $attachment_id->get_error_message() );
+			if ( defined( 'WP_CLI' ) && WP_CLI ) {
+				WP_CLI::warning( "Banner {$key}: " . $attachment_id->get_error_message() );
+			}
 			continue;
 		}
 		update_post_meta( $attachment_id, '_nhh_demo_image', $key );
@@ -173,4 +175,6 @@ foreach ( array( 'home', 'home-health-care-about-us', 'home-health-care-services
 
 set_theme_mod( 'nav_menu_locations', array( 'primary' => $primary, 'footer' => $footer ) );
 
-WP_CLI::success( sprintf( 'Demo content loaded: %d pages, 2 menus.', count( $ids ) ) );
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	WP_CLI::success( sprintf( 'Demo content loaded: %d pages, 2 menus.', count( $ids ) ) );
+}
