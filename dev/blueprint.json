@@ -1,0 +1,42 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Northfield Home Health — theme demo",
+		"description": "Installs the Northfield Home Health theme from GitHub and loads the demo pages, menus and banner images.",
+		"author": "Rosvie"
+	},
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"login": true,
+	"steps": [
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/Rosvie/northfield-home-health",
+				"ref": "main",
+				"refType": "branch"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "northfield-home-health"
+			}
+		},
+		{
+			"step": "setSiteOptions",
+			"options": {
+				"permalink_structure": "/%postname%/"
+			}
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp eval-file /wordpress/wp-content/themes/northfield-home-health/dev/seed.php"
+		}
+	]
+}
