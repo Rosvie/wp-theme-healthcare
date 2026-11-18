@@ -1,4 +1,4 @@
-# Northfield Home Health — Custom Healthcare WordPress Theme
+# Northfield Home Health - A custom Healthcare WordPress Theme
 
 A hand-built classic WordPress theme for a home health care agency, rebuilt from an existing agency
 website's design. The brand ("Northfield Home Health Services, Inc."), people's names and contact
