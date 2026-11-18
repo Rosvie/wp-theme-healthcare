@@ -4,6 +4,10 @@ A hand-built classic WordPress theme for a home health care agency, rebuilt from
 website's design. The brand ("Northfield Home Health Services, Inc."), people's names and contact
 details are fictional.
 
+**[▶ Live demo in WordPress Playground](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/Rosvie/northfield-home-health/main/dev/blueprint.json)**:
+runs a full WordPress site with the theme and demo content in your browser. Nothing to install;
+it takes about 20 seconds to boot.
+
 ![Homepage on desktop](docs/screenshots/desktop-home.jpg)
 
 | Service cards | Inner page (featured-image banner) |
@@ -70,7 +74,7 @@ git archive --format=zip --prefix=northfield-home-health/ -o northfield-home-hea
 │   └── icons.php           Inline SVG icon set
 ├── js/theme.js             Mobile nav, hero slider, scroll reveal, back-to-top
 ├── images/                 Theme images
-├── dev/                    Docker setup, seed script, demo page content and banner images
+├── dev/                    Docker setup, Playground blueprint, seed script, demo content and banner images
 └── docs/screenshots/
 ```
 
