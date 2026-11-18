@@ -1,0 +1,60 @@
+# Local demo environment: WordPress + MariaDB with this theme mounted.
+# WordPress core comes from the official image, so only the theme lives in this repo.
+#
+#   ./setup.sh            # first run: start containers, install WordPress, load demo content
+#   docker compose up -d  # later runs
+#   docker compose down   # stop (add -v to wipe the database and start fresh)
+#
+# Site: http://localhost:${WP_PORT:-8080}  ·  Admin: /wp-admin (admin / admin — local only)
+name: northfield-theme
+
+x-db-env: &db-env
+  WORDPRESS_DB_HOST: db
+  WORDPRESS_DB_USER: wordpress
+  WORDPRESS_DB_PASSWORD: wordpress
+  WORDPRESS_DB_NAME: wordpress
+
+services:
+  db:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+      MARIADB_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      retries: 20
+
+  wordpress:
+    image: wordpress:php8.3-apache
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${WP_PORT:-8080}:80"
+    environment: *db-env
+    volumes:
+      - wp_data:/var/www/html
+      - ..:/var/www/html/wp-content/themes/northfield-home-health
+
+  cli:
+    image: wordpress:cli-php8.3
+    profiles: ["tools"]
+    user: "33:33"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment: *db-env
+    volumes:
+      - wp_data:/var/www/html
+      - ..:/var/www/html/wp-content/themes/northfield-home-health
+
+volumes:
+  db_data:
+  wp_data:

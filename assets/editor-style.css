@@ -1,0 +1,6 @@
+/* Block editor styles: match front-end typography. */
+body { font-family: "Poppins", sans-serif; color: #333; font-size: 16px; line-height: 1.75; }
+h1, h2, h3, h4, h5, h6 { font-family: "Roboto Slab", serif; font-weight: 500; color: #215daa; line-height: 1.25; }
+h2 { color: #e78a2c; }
+a { color: #215daa; }
+mark.comp { background: none; color: #215daa; font-weight: 700; }
