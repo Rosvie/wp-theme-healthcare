@@ -71,7 +71,8 @@ function nhh_fonts_url() {
  */
 function nhh_assets() {
 	wp_enqueue_style( 'nhh-fonts', nhh_fonts_url(), array(), null );
-	wp_enqueue_style( 'nhh-style', get_stylesheet_uri(), array( 'nhh-fonts' ), NHH_VERSION );
+	wp_enqueue_style( 'nhh-style', NHH_URI . '/css/style.css', array( 'nhh-fonts' ), NHH_VERSION );
+	wp_enqueue_style( 'nhh-media', NHH_URI . '/css/media.css', array( 'nhh-style' ), NHH_VERSION );
 	wp_enqueue_script( 'nhh-theme', NHH_URI . '/js/theme.js', array(), NHH_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

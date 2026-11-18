@@ -60,13 +60,20 @@ git archive --format=zip --prefix=northfield-home-health/ -o northfield-home-hea
 ## Project structure
 
 ```
-├── style.css               Theme header + all styles (design tokens in :root)
+├── style.css               WordPress theme header
+├── css/
+│   ├── style.css           Base theme styles and design tokens
+│   └── media.css           Responsive and reduced-motion rules
 ├── functions.php           Setup, assets, menus, widget area
 ├── header.php / footer.php
-├── front-page.php          Homepage sections
+├── front-page.php          Homepage template and section includes
 ├── page.php, single.php, index.php, 404.php
 ├── template-parts/
 │   └── page-banner.php     Inner-page banner (featured image + title)
+├── includes/
+│   ├── banner.php          Homepage hero
+│   ├── middle.php          Services, careers and welcome sections
+│   └── bottom.php          Mission and contact sections
 ├── inc/
 │   ├── contact-form.php    Form definitions, rendering, submission handler, [nhh_map]
 │   ├── customizer.php      Theme options + defaults
