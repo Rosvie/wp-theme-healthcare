@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="303" height="127" viewBox="0 0 303 127" role="img" aria-labelledby="t">
+	<title id="t">Medicare Certified Provider</title>
+	<!-- shield with medical cross -->
+	<path d="M52 10l40 15v36c0 29-18 48-40 57-22-9-40-28-40-57V25z" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
+	<path d="M44 36h16v16h16v16H60v16H44V68H28V52h16z" fill="#fff"/>
+	<!-- wordmark -->
+	<text x="110" y="66" font-family="Poppins, Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#fff" textLength="183" lengthAdjust="spacingAndGlyphs">MEDICARE</text>
+	<rect x="111" y="78" width="182" height="2" fill="#fff" opacity=".7"/>
+	<text x="111" y="102" font-family="Poppins, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#fff" textLength="182" lengthAdjust="spacing">CERTIFIED PROVIDER</text>
+</svg>

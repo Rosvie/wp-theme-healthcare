@@ -58,8 +58,8 @@ $nhh_year  = (int) wp_date( 'Y' );
 
 					<div class="ftr_logo_holder">
 						<div class="accreditation">
-							<img src="<?php echo esc_url( nhh_img( 'newchap-logo.png' ) ); ?>" width="244" height="172" alt="<?php esc_attr_e( 'CHAP Standards of Excellence', 'northfield-home-health' ); ?>" loading="lazy">
-							<img src="<?php echo esc_url( nhh_img( 'cms-logo.png' ) ); ?>" width="303" height="127" alt="<?php esc_attr_e( 'CMS – Centers for Medicare & Medicaid Services', 'northfield-home-health' ); ?>" loading="lazy">
+							<img src="<?php echo esc_url( nhh_img( 'badge-accredited.svg' ) ); ?>" width="244" height="172" alt="<?php esc_attr_e( 'Accredited Home Health Agency – Standards of Care', 'northfield-home-health' ); ?>" loading="lazy">
+							<img src="<?php echo esc_url( nhh_img( 'badge-medicare.svg' ) ); ?>" width="303" height="127" alt="<?php esc_attr_e( 'Medicare Certified Provider', 'northfield-home-health' ); ?>" loading="lazy">
 						</div>
 						<div class="footer_logo">
 							<?php nhh_logo_markup( 'footer' ); ?>

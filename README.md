@@ -128,8 +128,8 @@ All photos are from [Unsplash](https://unsplash.com) under the [Unsplash License
 | `dev/demo-images/resources.jpg` | [Land O'Lakes, Inc.](https://unsplash.com/photos/7BXmH9YzNAI) |
 | `dev/demo-images/staff.jpg` | [Nappy](https://unsplash.com/photos/6LV3V1gLrP8) |
 
-The CHAP and CMS accreditation badges in the footer (`images/newchap-logo.png`, `images/cms-logo.png`) are
-third-party marks used as placeholders; remove or replace them for a real site.
+The footer badges (`images/badge-accredited.svg`, `images/badge-medicare.svg`) are generic placeholders drawn
+for this theme, not real accreditation marks. Swap in the agency's actual accreditation logos for a real site.
 
 ## License
 
