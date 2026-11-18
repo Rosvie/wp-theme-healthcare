@@ -19,7 +19,7 @@
 			"step": "installTheme",
 			"themeData": {
 				"resource": "git:directory",
-				"url": "https://github.com/Rosvie/northfield-home-health",
+				"url": "https://github.com/Rosvie/wp-theme-healthcare",
 				"ref": "main",
 				"refType": "branch"
 			},
